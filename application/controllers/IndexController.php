@@ -8,7 +8,9 @@ class IndexController extends Zend_Controller_Action
          $this->view->products = $rows;
     }
     public function searchAction(){
-        $this->_render('index');
+        $rows = Product::searchByName($this->getParam('search'));
+         $this->view->products = $rows;
+        $this->render('index');
     }
     function addAction()
     {

@@ -5,6 +5,10 @@ Add New product
 </a>
 </div>
 <br>
+<form method="GET" action="<?php echo $this->url(array('controller'=>'index', 'action'=>'search'));?>">
+    <input type="text" name="search"/>
+    <input type="submit" value="FIND"/>
+</form>
 <table>
 <caption>Products</caption>
 <tr>
