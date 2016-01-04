@@ -1,0 +1,13 @@
+<?php if ($this->product) :?>
+<p>Are you sure that you want to delete
+[<strong><?php echo $this->escape($this->product->product_name); ?></strong>]
+<form action="<?php echo $this->url(array('action'=>'delete')); ?>" method="post">
+<div>
+<input type="hidden" name="id" value="<?php echo $this->product->id; ?>" />
+<input type="submit" name="del" value="Yes" />
+<input type="submit" name="del" value="No" />
+</div>
+</form>
+<?php else: ?>
+<p>Cannot find Product.</p>
+<?php endif;?>

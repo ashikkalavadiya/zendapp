@@ -1,0 +1,33 @@
+<br>
+<div>
+<a href="<?php echo $this->url(array('controller'=>'index', 'action'=>'add'));?>">
+Add New product
+</a>
+</div>
+<br>
+<table>
+<caption>Products</caption>
+<tr>
+<th>Product Name</th>
+<th>Category</th>
+<th>Product Image</th>
+<th>&nbsp; Edit &nbsp;</th>
+<th>Delete</th>
+</tr>
+<?php foreach($this->products as $product) : ?>
+<tr>
+<td><?php echo $this->escape($product['product_name']);?></td>    
+<td><?php echo $this->escape($product['category_name']);?></td>
+<td  align="center"><img src="/images/<?php echo $this->escape($product['product_image']); ?>" height="59"/></td>
+<td align="center">
+    
+<a href="<?php echo $this->url(array('controller'=>'index', 'action'=>'edit',
+'id'=>$product['id']));?>">Edit</a>
+</td>
+<td align="center">
+<a href="<?php echo $this->url(array('controller'=>'index',
+'action'=>'delete', 'id'=>$product['id']));?>">Delete</a>
+</td>
+    </tr>
+<?php endforeach; ?>
+</table>
